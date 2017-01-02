@@ -1,0 +1,121 @@
+/* Flexbox Gallery */
+
+hr {
+  border: none;
+  border-top: 1px solid #fff;
+}
+
+.FlexGallery {
+  display: flex;
+  height: 600px;
+  margin: auto;
+  overflow: hidden;
+  padding: 1em;
+  width: calc(100vw - 150px);
+}
+
+.FlexGallery-panel {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  margin: 0 5px;
+  opacity: .7;
+  overflow: hidden;
+  transition: flex-grow .45s, opacity .2s;
+  transition-timing-function: cubic-bezier(.61, -.1, .53, .04);
+}
+
+.FlexGallery-panel:hover,
+.FlexGallery-panel:active {
+  opacity: 1;
+}
+
+.FlexGallery-panel.open {
+  flex: 5;
+  opacity: 1;
+}
+
+.FlexGallery-figure {
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+
+.FlexGallery-figure-caption {
+  bottom: 0;
+  color: #fff;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  transition: opacity .15s, transform .1s;
+  transform: translateY(-10px);
+}
+
+.FlexGallery-figure-caption.active {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.FlexGallery-figure-caption > * {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: transform .2s, opacity .3s;
+}
+
+.FlexGallery-figure-caption.active > * {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.name {
+  font-family: 'Open-sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5em;
+  text-shadow: 0 2px 1px #222;
+}
+
+.fact {
+  font-size: .8em;
+  letter-spacing: -1px;
+  position: block;
+  text-align: left;
+}
+
+.FlexGallery-figure-caption > *:nth-child(1) {
+  transition-delay: .45s;
+}
+.FlexGallery-figure-caption > *:nth-child(2) {
+  transition-delay: .6s;
+}
+.FlexGallery-figure-caption > *:nth-child(3) {
+  transition-delay: .85s;
+}
+.FlexGallery-figure-caption > *:nth-child(4) {
+  transition-delay: .95s;
+}
+.FlexGallery-figure-caption > *:nth-child(5) {
+  transition-delay: 1.05s;
+}
+
+/* Panel backgrounds */
+.venue-1 {
+  background-image: url('./imgs/bill.jpg');
+}
+.venue-2 {
+  background-image: url('./imgs/fillmore.jpg');
+}
+.venue-3 {
+  background-image: url('./imgs/fox.jpg');
+}
+.venue-4 {
+  background-image: url('./imgs/gothic.jpg');
+}
+.venue-5 {
+  background-image: url('./imgs/oracle.jpg');
+}
